@@ -81,5 +81,8 @@ public class DemoSenderApplication {
 			return BindingBuilder.bind(appQueueSpecific()).to(appExchange()).with(ROUTING_KEY);
 		}
 
-
+		@Bean
+		public Docket api() throws IOException, XmlPullParserException {
+			return new Docket(DocumentationType.SWAGGER_2);
+		}
 }
